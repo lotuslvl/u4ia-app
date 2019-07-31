@@ -130,6 +130,10 @@ console.log(queryURL);
 var queryURL = "https://www.behindthename.com/api/random.json?name=joe&key=jo289062920";
 console.log(queryURL);
 
+//gender name probability 
+var queryURL = "https://api.genderize.io?name=taylor&apikey=d29a290e5cddfa95a00b07b0457d64f6";
+console.log(queryURL);
+
   var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
   console.log(queryURL);
 
