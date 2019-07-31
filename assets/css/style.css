@@ -1,0 +1,111 @@
+
+
+/* icons*/ 
+.fa-check {
+
+    margin-right:10px;
+    color:#3AB58B;
+}
+
+.fa-times {
+
+    margin-right:10px;
+    color:#3AB58B;
+}
+
+/* maybe and maybe not buttons */
+
+.maybe-button {
+    color:#3AB58B;
+
+}
+
+.maybe-not-button {
+
+    color:#3AB58B;
+}
+
+/*card fonts*/
+
+.brief {
+
+    font-family: 'Zilla Slab', serif;
+    font-size: 16px;
+    color:rgb(41, 41, 41);
+}
+.name {
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+    color:#3AB58B;
+}
+
+.name-definition {
+
+    font-family: 'Zilla Slab', serif;
+    font-size: 18px;
+    color:rgb(41, 41, 41);
+}
+
+
+.a {
+    color:#3AB58B;
+    font-family: 'Nunito', sans-serif;
+
+
+}
+
+
+.card {
+    border-radius: 10px;
+    width: 100%;
+
+
+}
+
+.nav{
+
+    background: white;
+    color: black;
+    height: 200px !important;
+    padding-bottom: 50px !important;
+
+}
+  
+  
+    
+    .nav-wrapper{
+
+        background: white;
+        color: black;
+        padding-bottom: 50px !important;
+       
+
+    }
+      
+        
+        nav {
+            height: 150px;
+            line-height: 30px;
+        }
+        
+        nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+            height: 150px;
+            line-height: 30px;
+        }
+        
+        nav .button-collapse i {
+            height: 150px;
+            line-height: 30px;
+        }
+        
+        nav .brand-logo { 
+            font-size: 1.6rem; 
+        }
+        
+        @media only screen and (min-width: 601px){
+            nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+                height: 30px;
+                line-height: 30px;
+            }
+        }
