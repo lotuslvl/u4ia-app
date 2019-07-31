@@ -115,4 +115,36 @@ $("#like-button").on("click", function likecounter() {
           
                 });
 
+//API Code
+
+$(document).ready(function() {
+  //lookup
+var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
+console.log(queryURL);
+
+//related names
+var queryURL = "https://www.behindthename.com/api/related.json?name=joe&key=jo289062920";
+console.log(queryURL);
+
+//random names
+var queryURL = "https://www.behindthename.com/api/random.json?name=joe&key=jo289062920";
+console.log(queryURL);
+
+//gender name probability 
+var queryURL = "https://api.genderize.io?name=taylor&apikey=d29a290e5cddfa95a00b07b0457d64f6";
+console.log(queryURL);
+
+  var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
+  console.log(queryURL);
+
+  $.ajax({url: queryURL, 
+  method: 'GET'})
+  .done(function(response) {
+      // grabs the data
+      console.log(response)
+      var results = response.names
+      console.log(results)
+      // $("#names").html(results.join(' '));
+  });
+})
 
