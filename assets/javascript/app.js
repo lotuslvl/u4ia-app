@@ -73,7 +73,7 @@ database.ref().on("value", function dislikecount(snapshot) {
   }, function(errorObject) {
     console.log("The read failed: " + errorObject.code);
   });
-
+// adding branch
 // Functions
 // ================================================================================
 //SENDS THE # OF TIME THE LIKE BUTTON WAS PRESSED TO FIREBASE
