@@ -444,7 +444,7 @@
 }
 
 .deep-purple.lighten-3 {
-  background-color: #b39ddb !important;
+  background-color: #838383 !important;
 }
 
 .deep-purple-text.text-lighten-3 {
@@ -2241,6 +2241,7 @@ a {
   background-color: transparent;
   /* 1 */
   -webkit-text-decoration-skip: objects;
+  color:#3AB58B;
   /* 2 */
 }
 
@@ -3398,7 +3399,7 @@ nav ul a span.badge {
   float: none;
   margin-left: 4px;
   line-height: 22px;
-  height: 22px;
+  height: 50px;
   -webkit-font-smoothing: auto;
 }
 
@@ -4270,7 +4271,7 @@ table span.badge {
 }
 
 nav {
-  color: #fff;
+  color:black ;
   background-color: #ee6e73;
   width: 100%;
   height: 250px;
@@ -4292,7 +4293,7 @@ nav.nav-extended .nav-content {
 }
 
 nav a {
-  color: #fff;
+  color:black ;
 }
 
 nav i,
@@ -4330,7 +4331,7 @@ nav .sidenav-trigger i {
 
 nav .brand-logo {
   position: absolute;
-  color: #fff;
+  color:black ;
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
@@ -4399,7 +4400,9 @@ nav ul a {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
   font-size: 1rem;
-  color: #fff;
+  color:black ;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
   display: block;
   padding: 0 15px;
   cursor: pointer;
@@ -4409,6 +4412,7 @@ nav ul a.btn, nav ul a.btn-large, nav ul a.btn-small, nav ul a.btn-large, nav ul
   margin-top: -2px;
   margin-left: 15px;
   margin-right: 15px;
+  
 }
 
 nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-small > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-flat > .material-icons, nav ul a.btn-floating > .material-icons {
@@ -4476,7 +4480,7 @@ nav .input-field label.active i {
     min-height: 64px;
   }
   nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
-    height: 64px;
+    height: 100px;
     line-height: 64px;
   }
   .navbar-fixed {
@@ -4499,8 +4503,26 @@ html {
   html {
     font-size: 14px;
   }
+
+  nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    height: 100px;
+    line-height: 100px;
+  }
+
+ 
 }
 
+@media only screen and (max-width: 650px) {
+.row .col.offset-s3 {
+  margin-left: 5%;
+}
+
+.row .col.s6 {
+
+  width: 90%;
+}
+
+}
 @media only screen and (min-width: 992px) {
   html {
     font-size: 14.5px;

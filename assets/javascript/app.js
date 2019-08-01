@@ -119,32 +119,73 @@ $("#like-button").on("click", function likecounter() {
 
 $(document).ready(function() {
   //lookup
-var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
-console.log(queryURL);
+// var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
+// console.log(queryURL);
 
-//related names
-var queryURL = "https://www.behindthename.com/api/related.json?name=joe&key=jo289062920";
-console.log(queryURL);
+// //related names
+// var queryURL = "https://www.behindthename.com/api/related.json?name=joe&key=jo289062920";
+// console.log(queryURL);
 
-//random names
-var queryURL = "https://www.behindthename.com/api/random.json?name=joe&key=jo289062920";
-console.log(queryURL);
+// //random names
+// var queryURL = "https://www.behindthename.com/api/random.json?name=joe&key=jo289062920";
+// console.log(queryURL);
 
-//gender name probability 
-var queryURL = "https://api.genderize.io?name=taylor&apikey=d29a290e5cddfa95a00b07b0457d64f6";
-console.log(queryURL);
+// //gender name probability 
+// var queryURL = "https://api.genderize.io?name=taylor&apikey=d29a290e5cddfa95a00b07b0457d64f6";
+// console.log(queryURL);
 
-  var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
-  console.log(queryURL);
+//   var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
+//   console.log(queryURL);
 
-  $.ajax({url: queryURL, 
-  method: 'GET'})
-  .done(function(response) {
-      // grabs the data
-      console.log(response)
-      var results = response.names
-      console.log(results)
-      // $("#names").html(results.join(' '));
-  });
-})
+//   var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
+//   console.log(queryURL);
 
+  var queryURL = "https://www.behindthename.com/api/random.json?name=joe&key=jo289062920";
+        // console.log(queryURL);
+        $.ajax({url: queryURL, 
+        method: 'GET'})
+        .done(function(response) {
+            // grabs the data
+            var results = response.names;
+            // console.log(results);
+            //empties the div before adding more gifs
+
+            console.log (results[0]);
+            $('.name').text(results[0]);
+
+            var queryURL2 = "https://en.wikipedia.org/api/rest_v1/page/summary/" + results[0] + "?redirect=true";
+            // console.log(queryURL);
+            $.ajax({url: queryURL2, 
+            method: 'GET'})
+            .done(function(response) {
+                // grabs the data
+                var results = response.extract;
+                console.log(results);
+                $(".name-definition").text(results);
+                //empties the div before adding more gifs
+    
+                // console.log (results[0]);
+                // $('.name').text(results[0]);
+              })
+                // loops through the data
+                // for ( var j=0; j < results.length; j++) {
+                //     var imageView = results[j].images.fixed_height.url;
+                //     var still = results[j].images.fixed_height_still.url;
+                //         // console.log(imageView);  
+                //     var nflImage = $('<img>').attr("src", still).attr('data-animate', imageView).attr('data-still', still);
+                //     nflImage.attr('data-state', 'still');
+                //     $('#name').prepend(nflImage);
+                //     nflImage.on('click', animateGif);
+                    
+                    // pulling the rating
+                        // var rating = results[j].rating;
+                        //     // console.log(rating);
+                        // var displayRating= $('<p>').text("Rating: " + rating);
+                        // $('#nflView').prepend(displayRating);
+            
+                })
+
+                // setTimeout(function(){ console.log($('.name').val()); }, 3000);
+
+                
+        });
