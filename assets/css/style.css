@@ -157,7 +157,17 @@ color:#3AB58B !important;
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Zilla Slab', serif;
+  }
+
+  .hero{
+    color:white !important;
+  }
+
+  .login{
+    background-color:rgb(46, 46, 46) !important;
+ 
+  
   }
 /*linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) */
 .hero-image {
@@ -167,6 +177,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    padding: 30px;
   }
   
   .hero-text {
@@ -176,6 +187,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-size: 20px !important;
   }
   
   .hero-text button {
@@ -193,3 +205,21 @@ body, html {
     background-color: #555;
     color: white;
   }
+
+  .about-u4ia {
+      width: 50%;
+      font-size: 20px !important;
+      font-family: 'Zilla Slab', serif;
+
+  }
+
+  .green-background{
+      background-color: #3AB58B;
+  }
+
+  .green-background h1{
+    font-size:30px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif !important;
+    color: white !important;
+}
