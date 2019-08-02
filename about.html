@@ -44,14 +44,14 @@
      <nav>
             <div class="nav-wrapper">
               
-              <a href="#!" class="brand-logo"><img class="logo-lotus" src="assets\img\logo.png" alt="logo" style="width:100px;height:100px;"></a>
+              <a href="#" class="brand-logo"><img class="logo-lotus" src="assets\img\logo.png" alt="logo" style="width:100px;height:100px;"></a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="\index.html">Browse</a></li>
-                <li><a href="\maybe.html">Maybes</a></li>
-                <li><a href="\maybe-not.html">Maybe Nots</a></li>
-                <li><a href="\to-do.html">To-Dos</a></li>
-                <li><a href="\about.html">About u4ia</a></li>
+                <li><a href="/index.html">Browse</a></li>
+                <li><a href="/maybe.html">Maybes</a></li>
+                <li><a href="/maybe-not.html">Maybe Nots</a></li>
+                <li><a href="/to-do.html">To-Dos</a></li>
+                <li><a href="/about.html">About u4ia</a></li>
         
             </div>
           </nav>
@@ -74,23 +74,155 @@
 <!--Nunito and Zilla Font-->
 <div class="hero-image">
         <div class="hero-text">
-          <h1>Find your new name</h1>
-          <p>Find a new name that you are proud of without the binary BS of baby name lookups.Find yourself and have fun!</p>
-          <a href="\index.html"><button>Browse Names</button> </a>
-          <a href="\index.html"> <button>Log In</button> </a>
+          <img class="logo-large" src="assets\img\u4ia-logo-large.png" alt="logo" style="width:270px;">
+          <p>Find a new name that you are proud of without the binary BS of baby name lookups. When you have a list of maybes share it with your friends. Find yourself and have fun!</p>
+          <a href="\index.html"class="hero waves-effect waves-light btn"> Browse Names </a>
+          <a class="login hero waves-effect waves-light btn modal-trigger"  href="#modal1"> Log In</a>
+          
         </div>
       </div>
-      <div class="row ol s6 offset-s3">
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+            <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                          <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="last_name" type="text" class="validate">
+                          <label for="last_name">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                          <label for="disabled">Disabled</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="password" type="password" class="validate">
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" class="validate">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s12">
+                          This is an inline input field:
+                          <div class="input-field inline">
+                            <input id="email_inline" type="email" class="validate">
+                            <label for="email_inline">Email</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+    </div>
+    <div class="modal-footer">
+      
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+          
+
+      <div class="row">
+      <div class="about-u4ia col s6 offset-s3">
           
             <p> We've been there! You are transitioning and want a name to match your gender identity. Should it be short or long? More masc or more femme? Finally, you can pick a name that reflects who you are. How 'effin cool is that!?   </p>
       
-            <p>    u4ia will help you along this emotional ride by guiding you through our name directory for you to narrow down to your final choice of "Maybes". You can even get some of your closest friends and family involved and share your Maybe list with them.  </p>
+            <p> u4ia will help you along this emotional ride by guiding you through our name directory for you to narrow down to your final choice of "Maybes". You can even get some of your closest friends and family involved and share your Maybe list with them.  </p>
                   
-            <p>      Done picking your name? Now it's time to get to the dirty work. Court! Legal fees! The Social Security Administration! Ah! It can be scary, but chill out. Our handy checklist and state guidelines repository will make the process seamless.  </p>
+            <p> Done picking your name? Now it's time to get to the dirty work. Court! Legal fees! The Social Security Administration! Ah! It can be scary, but chill out. Our handy checklist and state guidelines repository will make the process seamless.  </p>
                   
-            <p>      You can do this! Now have fun and find yourself!</p> 
+            <p> You can do this! Now have fun and find yourself!</p> 
       
       
-          </div>
+      </div>
+    </div>
 
+
+    <div class="row">
+            <div class="green-background col s12">
+                
+                    <h1> About the Creators </h1>
+                </div>  
+                
+        
+            </div>
+
+
+
+            <div class="row">
+            <div class="row">
+            <div class="row role">
+                    <div class="col s2">
+                      <div class="card">
+                        <div class="card-image">
+                          <img src="https://media.licdn.com/dms/image/C4E03AQG8U8fGW4_rHA/profile-displayphoto-shrink_800_800/0?e=1570060800&v=beta&t=AZiXnrX60a9bvfx0WQ6Ig7o4RSDX3rYFjQzGGCaCuYo" style="height:270px;width: 266px;">
+                          <span class="card-title">Joeseph Allen</span>
+                        </div>
+                        <div class="card-content">
+                          <p>API and Javascript Wrangler</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="https://www.linkedin.com/in/joeallen9/">Follow on LinkedIn</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>   
+  
+                  <div class="row role">
+                        <div class="col s2">
+                          <div class="card">
+                            <div class="card-image">
+                              <img src="https://media.licdn.com/dms/image/C4D03AQE86QoyK9_D4w/profile-displayphoto-shrink_200_200/0?e=1570060800&v=beta&t=fADpnsRjiLA0UCxeNEk6VajKqpzYr2nb3FExlbWQfAU" style="height:270px;width: 266px;">
+                              <span class="card-title">Lotus Lindez</span>
+                            </div>
+                            <div class="card-content">
+                              <p>Experience Designer and Front-End Developer</p>
+                            </div>
+                            <div class="card-action">
+                              <a href="https://www.linkedin.com/in/lotuslindez//">Follow on LinkedIn</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
+
+
+
+       
+                  <div class="row role">
+                        <div class="col s2">
+                          <div class="card">
+                            <div class="card-image">
+                              <img src="https://media.licdn.com/dms/image/C4E03AQE-huR8ImHjrA/profile-displayphoto-shrink_800_800/0?e=1570060800&v=beta&t=x_fsH_u6f123zp3AIeSz0JvInDqbM7BqlxnCjipvmcs" style="height:270px;width: 266px;">
+                              <span class="card-title">Eladio Montenegro</span>
+                            </div>
+                            <div class="card-content">
+                              <p>GIT Repo Keeper and Database Master</p>
+                            </div>
+                            <div class="card-action">
+                              <a href="https://www.linkedin.com/in/eladiomontenegro/">Follow on LinkedIn</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+       
+            
+       
+                    </div>
+                    </div>
+
+ 
     </body>

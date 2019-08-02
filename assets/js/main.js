@@ -36,7 +36,6 @@ function myFunction() {
 
 
 
-
 // pull over the right FOR MOBILE
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -53,6 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
         alert("clicked!");
         var name= $(this).attr("name");
         $("#"+ name).hide();
+
+
+        //toasts appear when maybe is clicked 
+M.toast({html: 'Added to Maybe List!'})
+
+
+//toasts appear when maybe not is clicked 
+M.toast({html: 'Added to Maybe Not List!'})
+
+//toasts appear when item is removed from maybe list
+M.toast({html: 'Removed from list and now available in the BROWSE page.'})
+
+$('.modal').modal();
+
+
       });
 
 
