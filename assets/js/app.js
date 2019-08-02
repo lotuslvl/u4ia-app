@@ -115,9 +115,22 @@ $("#like-button").on("click", function likecounter() {
           
                 });
 
+            
+                
+
 //API Code
 
 $(document).ready(function() {
+
+  //toasts appear when maybe is clicked 
+M.toast({html: 'Added to Maybe List!'})
+
+
+//toasts appear when maybe not is clicked 
+M.toast({html: 'Added to Maybe Not List!'})
+
+//toasts appear when item is removed from maybe list
+M.toast({html: 'Removed from list and now available in the BROWSE page.'})
   //lookup
 // var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
 // console.log(queryURL);
@@ -140,18 +153,19 @@ $(document).ready(function() {
 //   var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
 //   console.log(queryURL);
 
-  var queryURL = "https://www.behindthename.com/api/random.json?name=joe&key=jo289062920";
-        // console.log(queryURL);
+  var queryURL = "https://www.behindthename.com/api/random.json?usage=ita&gender=f&number=6&key=jo289062920";
+        console.log(queryURL);
         $.ajax({url: queryURL, 
         method: 'GET'})
         .done(function(response) {
-            // grabs the data
+              // grabs the data
             var results = response.names;
             // console.log(results);
             //empties the div before adding more gifs
 
             console.log (results[0]);
-            $('.name').text(results[0]);
+            $('#name-1').text(results[0]);
+          
 
             var queryURL2 = "https://en.wikipedia.org/api/rest_v1/page/summary/" + results[0] + "?redirect=true";
             // console.log(queryURL);
@@ -161,7 +175,9 @@ $(document).ready(function() {
                 // grabs the data
                 var results = response.extract;
                 console.log(results);
-                $(".name-definition").text(results);
+                $(".name-definition").text(results); 
+
+             
                 //empties the div before adding more gifs
     
                 // console.log (results[0]);
@@ -183,6 +199,9 @@ $(document).ready(function() {
                         // var displayRating= $('<p>').text("Rating: " + rating);
                         // $('#nflView').prepend(displayRating);
             
+                }).catch(function(error){
+
+                  console.log(error);
                 })
 
                 // setTimeout(function(){ console.log($('.name').val()); }, 3000);

@@ -1,134 +1,131 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-    <title>u4ia</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    
-    
-
-    <!--JQUERY-->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-    <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-
-
-     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!--Icons-->
-    <script src="https://kit.fontawesome.com/9222532195.js"></script>
-
-      
-     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="assets\css\materialize.css"  media="screen,projection"/>
-    
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!--otherstyles.css-->
-    <link rel="stylesheet" href="assets\css\style.css">
-
-    <!--Nunito and Zilla Font-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Zilla+Slab&display=swap" rel="stylesheet">
-</head>
-<body>
-
-   <!--navigation-->
-      
-      <nav>
-          <div class="nav-wrapper">
-            
-            <a href="#!" class="brand-logo"><img class="logo-lotus" src="assets\img\logo.png" alt="logo" style="width:100px;height:100px;"></a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="file:///C:/Users/Lotus/project-1/index.html">Browse</a></li>
-              <li><a href="file:///C:/Users/Lotus/project-1/maybe.html">Maybes</a></li>
-              <li><a href="file:///C:/Users/Lotus/project-1/maybe-not.html">Maybe Nots</a></li>
-              <li><a href="file:///C:/Users/Lotus/project-1/to-do.html">To-Dos</a></li>
-              <li><a href="file:///C:/Users/Lotus/project-1/about.html">About u4ia</a></li>
-      
-          </div>
-        </nav>
+  <title>u4ia</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
   
 
 
 
-     <!--Mobile navigation-->  
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="index.html">Browse</a></li>
-            <li><a href="file:///C:/Users/Lotus/project-1/maybe.html">Maybes</a></li>
-            <li><a href="maybe-not.html">Maybe Nots</a></li>
-            <li><a href="to-do.html">To-Dos</a></li>
-            <li><a href="about.html">About u4ia</a></li>
-        </ul>
-            
-    <div class="row">
+  <!--JQUERY-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Icons-->
+  <script src="https://kit.fontawesome.com/9222532195.js"></script>
+
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="assets\css\materialize.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--otherstyles.css-->
+  <link rel="stylesheet" href="assets\css\style.css">
+
+  <!--Nunito and Zilla Font-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Zilla+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--navigation-->
+
+  <nav>
+    <div class="nav-wrapper">
+
+      <a href="#!" class="brand-logo"><img class="logo-lotus" src="assets\img\logo.png" alt="logo"
+          style="width:100px;height:100px;"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="file:///C:/Users/Lotus/project-1/index.html">Browse</a></li>
+        <li><a href="file:///C:/Users/Lotus/project-1/maybe.html">Maybes</a></li>
+        <li><a href="file:///C:/Users/Lotus/project-1/maybe-not.html">Maybe Nots</a></li>
+        <li><a href="file:///C:/Users/Lotus/project-1/to-do.html">To-Dos</a></li>
+        <li><a href="file:///C:/Users/Lotus/project-1/about.html">About u4ia</a></li>
+
+    </div>
+  </nav>
+
+
+
+
+  <!--Mobile navigation-->
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Browse</a></li>
+    <li><a href="file:///C:/Users/Lotus/project-1/maybe.html">Maybes</a></li>
+    <li><a href="maybe-not.html">Maybe Nots</a></li>
+    <li><a href="to-do.html">To-Dos</a></li>
+    <li><a href="about.html">About u4ia</a></li>
+  </ul>
+
+  <div class="row">
     <div class="col s6 offset-s3">
-    <img class="page-title" id="browse-title" src="assets\img\browse.PNG" alt="logo" style="width:100%">
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search names..">
+      <img class="page-title" id="browse-title" src="assets\img\browse.PNG" alt="logo" style="width:100%">
+      <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search names.."> -->
     </div>
   </div>
-        
 
 
-<section class="all-names">
+
+  <section class="all-names">
 
 
     <ul id="myUL">
-        <li>
-         <!--placeholdercard-->
+      <li>
+        <!--placeholdercard-->
         <a class="search-tag" href="#">Alexander</a>
         <div class="row">
-                <div class="col s6 offset-s3">
-                  <div class="card white z-depth-3 hoverable">
-                    <div class="card-content">
-                      <p class="brief">brief description</p>
-                      <span class="name" id="punk">Alexander</span>
-                      <p class="name-definition"> Compound Greek name composed of the elements alexein (to defend, to help) and andros (man): hence, “defender or helper of mankind.” The name was borne by Alexander the Great (356—323 B.C.), a Macedonian king and military conqueror who helped spread the Greek culture across Asia Minor to Egypt and India.</p>
-                    </div>
-                    <div class="card-action">
-                        <a class="maybe-not-button" data="name" href="#" onclick="M.toast({html: 'Added to Maybe Not List!'})"><i class="fas fa-times" style="color:#3AB58B" ></i> Maybe Not</a>
-                        
-                        <a class="maybe-button" data="name" href="#" onclick="M.toast({html: 'Added to Maybe List!'})" > <i class="fas fa-check" style="color:#3AB58B" ></i>  Maybe</a>          
-                    </div>
-
-                  </div>
-                </div>
+          <div class="col s6 offset-s3">
+            <div class="card white z-depth-3 hoverable">
+              <div class="card-content">
+                <p class="brief">brief description</p>
+                <span class="name" id="name-1">Alexander</span>
+                <p class="name-definition" id="def1"> </p>
               </div>
-            </li>
+              <div class="card-action">
+                <a class="maybe-not-button" data="name" href="#"
+                  onclick="M.toast({html: 'Added to Maybe Not List!'})"><i class="fas fa-times"
+                    style="color:#3AB58B"></i> Maybe Not</a>
 
-          <li>
-              <a class="search-tag" href="#">Victoria</a>
-              <div class="row">
-                  <div class="col s6 offset-s3">
-                    <div class="card white z-depth-3 hoverable">
-                      <div class="card-content">
-                        <p class="brief">brief description</p>
-                        <span class="name" id="punk">Victoria</span>
-                        <p class="name-definition"> Compound Greek name composed of the elements alexein (to defend, to help) and andros (man): hence, “defender or helper of mankind.” The name was borne by Alexander the Great (356—323 B.C.), a Macedonian king and military conqueror who helped spread the Greek culture across Asia Minor to Egypt and India.</p>
-                      </div>
-                      <div class="card-action">
-                          <a class="maybe-not-button" data="name" href="#" onclick="M.toast({html: 'Added to Maybe Not List!'})" ><i class="fas fa-times" style="color:#3AB58B" ></i> Maybe Not</a>
-                          <a class="maybe-button" data="name" href="#" onclick="M.toast({html: 'Added to Maybe List!'})" > <i class="fas fa-check" style="color:#3AB58B" ></i>  Maybe</a>          
-                      </div>
-                    </div>
-                  </div>
-                </div>        
-              </li>      
-                </ul>   
-              
-            </section>
+                <a class="maybe-button" data="name" href="#" onclick="M.toast({html: 'Added to Maybe List!'})"> <i
+                    class="fas fa-check" style="color:#3AB58B"></i> Maybe</a>
+              </div>
 
-            <script src='assets\js\app.js'></script>
-    <script type="text/javascript" src="assets\js\materialize.min.js"></script>
-    <script src='assets\js\main.js'></script>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      
+
+
+    </ul>
+
+ 
+  </section>
+
+ 
+  <script src='assets/js/app.js'></script>  
+  <script type="text/javascript" src="assets\js\materialize.min.js"></script>
+  <script src='assets\js\main.js'></script>
 </body>
 
 
