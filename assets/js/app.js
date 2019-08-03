@@ -122,15 +122,7 @@ $("#like-button").on("click", function likecounter() {
 
 $(document).ready(function() {
 
-  //toasts appear when maybe is clicked 
-M.toast({html: 'Added to Maybe List!'})
 
-
-//toasts appear when maybe not is clicked 
-M.toast({html: 'Added to Maybe Not List!'})
-
-//toasts appear when item is removed from maybe list
-M.toast({html: 'Removed from list and now available in the BROWSE page.'})
   //lookup
 // var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
 // console.log(queryURL);
