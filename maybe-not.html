@@ -4,10 +4,9 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-    <title>maybe</title>
+    <title>Maybe Not</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='assets\javascript\app.js'></script>
     <script src='assets\js\main.js'></script>
 
     <!--JQUERY-->
@@ -48,11 +47,11 @@
             <a href="#!" class="brand-logo"><img class="logo-lotus" src="assets\img\logo.png" alt="logo" style="width:100px;height:100px;"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="/index.html">Browse</a></li>
-              <li><a href="/maybe.html">Maybes</a></li>
-              <li><a href="/maybe-not.html">Maybe Nots</a></li>
-              <li><a href="/to-do.html">To-Dos</a></li>
-              <li><a href="/about.html">About u4ia</a></li>
+              <li><a href="index.html">Browse</a></li>
+              <li><a href="maybe.html">Maybes</a></li>
+              <li><a href="maybe-not.html">Maybe Nots</a></li>
+              <li><a href="to-do.html">To-Dos</a></li>
+              <li><a href="about.html">About u4ia</a></li>
       
           </div>
         </nav>
@@ -79,28 +78,37 @@
 
 
 
-<section class="all-names">
+  <section class="all-names">
   
 
-         <!--placeholdercard-->
-        <div class="row" id="Alexander">
-                <div class="col s6 offset-s3">
-                  <div class="card white z-depth-3 hoverable">
-                    <div class="card-content">
-                      <p class="brief">brief description</p>
-                      <span class="name">Alexander</span>
-                      <a class="put-back-button" name="Alexander" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > <i class="fas fa-retweet" style="color:rgb(98, 98, 98)" ></i> <p> REMOVE FROM THIS LIST</p> </a>
-                    </div>
+    <!--placeholdercard-->
+   <div class="row" id="Alexander">
+           <div id="card-list" class="col s6 offset-s3">
+             <!-- <div class="card white z-depth-3 hoverable">
+               <div class="card-content">
+                 <p class="brief">brief description</p>
+                 <span class="name">Alexander</span>
+                 <p class="name-definition"> Compound Greek name composed of the elements alexein (to defend, to help) and andros (man): hence, “defender or helper of mankind.” The name was borne by Alexander the Great (356—323 B.C.), a Macedonian king and military conqueror who helped spread the Greek culture across Asia Minor to Egypt and India.</p>
+               </div>
+               <div class="card-action">
+                   <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> 0</a>
+                   <a class="dislike-button" id="dislike-value" dislikes=0 href="#"> <i class="fas fa-thumbs-down" style="color:#3AB58B" ></i>  0 </a>  
+                   <a class="trash-button" name="Alexander" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > <i class="fas fa-trash" style="color:rgb(98, 98, 98)" ></i> <p> Remove From List</p> </a>        
+                   
+               
+               </div>
+             </div> -->
+           </div>
+         </div>
+                  
 
-                  </div>
-                </div>
-              </div>
-                       
-
-            </section>
+       </section>
 
 </body>
+
+<!-- <script src='assets\js\app.js'></script> -->
 <script type="text/javascript" src="assets\js\materialize.min.js"></script>
-<script src="assets/javascript/app.js"></script>
+<!-- <script src='assets\js\main.js'></script> -->
+<script src='assets/js/maybe-list-logic.js'></script>
 
 </html>
