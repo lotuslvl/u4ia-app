@@ -55,11 +55,11 @@
             <a href="#!" class="brand-logo"><img class="logo-lotus" src="assets\img\logo.png" alt="logo" style="width:100px;height:100px;"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="/index.html">Browse</a></li>
-              <li><a href="/maybe.html">Maybes</a></li>
-              <li><a href="/maybe-not.html">Maybe Nots</a></li>
-              <li><a href="/to-do.html">To-Dos</a></li>
-              <li><a href="/about.html">About u4ia</a></li>
+              <li><a href="index.html">Browse</a></li>
+              <li><a href="maybe.html">Maybes</a></li>
+              <li><a href="maybe-not.html">Maybe Nots</a></li>
+              <li><a href="to-do.html">To-Dos</a></li>
+              <li><a href="about.html">About u4ia</a></li>
       
           </div>
         </nav>
@@ -96,16 +96,18 @@
           <div class="col s6 offset-s3">
             <div class="card white z-depth-3 hoverable">
               <div class="card-content">
+
                 <p class="brief"></p>
                 <span class="name" id="name-1">Alexander</span>
+
                 <p class="name-definition" id="def1"> </p>
               </div>
               <div class="card-action">
-                <a class="maybe-not-button" data="name" href="#"
+                <a class="maybe-not-button" id="maybenot-button" data="name" href="#"
                   onclick="M.toast({html: 'Added to Maybe Not List!'})"><i class="fas fa-times"
                     style="color:#3AB58B"></i> Maybe Not</a>
 
-                <a class="maybe-button" data="name" href="#" onclick="M.toast({html: 'Added to Maybe List!'})"> <i
+                <a class="maybe-button" id-="maybe-button1" data="name" href="#" onclick="M.toast({html: 'Added to Maybe List!'})"> <i
                     class="fas fa-check" style="color:#3AB58B"></i> Maybe</a>
               </div>
 
@@ -126,6 +128,10 @@
   <script src='assets/js/app.js'></script>  
   <script type="text/javascript" src="assets\js\materialize.min.js"></script>
   <script src='assets\js\main.js'></script>
+
+  <script>
+
+  </script>
 </body>
 
 

@@ -1,13 +1,13 @@
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyD-xaonkjtvgOwQz_Me7p7W9YGvkNONUG4",
-    authDomain: "u4ia-fcb91.firebaseapp.com",
-    databaseURL: "https://u4ia-fcb91.firebaseio.com",
-    projectId: "u4ia-fcb91",
-    storageBucket: "",
-    messagingSenderId: "135347478276",
-    appId: "1:135347478276:web:528ff3e38518ab79"
+  apiKey: "AIzaSyD-xaonkjtvgOwQz_Me7p7W9YGvkNONUG4",
+  authDomain: "u4ia-fcb91.firebaseapp.com",
+  databaseURL: "https://u4ia-fcb91.firebaseio.com",
+  projectId: "u4ia-fcb91",
+  storageBucket: "",
+  messagingSenderId: "135347478276",
+  appId: "1:135347478276:web:528ff3e38518ab79"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -114,23 +114,64 @@ $("#like-button").on("click", function likecounter() {
             });
           
                 });
+// Whenever a user clicks the click button we store their login info in firebase
+$("#submit-info").on("click", function(event) {
+  event.preventDefault();
+
+  // Get the input values
+  var firstName = $("#first_name").val();
+  var userEmail = $("#email").val().trim();
+  var userPassword = $("#password").val().trim();
+
+  // Log the Bidder and Price (Even if not the highest)
+  console.log(firstName);
+  console.log(userEmail);
+  console.log(userPassword);
+
+  // if (bidderPrice > highPrice) {
+
+  //   // Alert
+  //   alert("You are now the highest bidder.");
+
+    // Save the new price in Firebase
+    database.ref().push({
+      firstName: firstName,
+      userEmail: userEmail,
+      userPassword: userPassword
+
+    });
+
+
+    //collected the click of the maybe/maybenot button
+
+
+  //   // Log the new High Price
+  //   console.log("New High Price!");
+  //   console.log(bidderName);
+  //   console.log(bidderPrice);
+
+
+  //   // Store the new high price and bidder name as a local variable (could have also used the Firebase variable)
+  //   highBidder = bidderName;
+  //   highPrice = parseInt(bidderPrice);
+
+  //   // Change the HTML to reflect the new high price and bidder
+  //   $("#highest-bidder").text(bidderName);
+  //   $("#highest-price").text("$" + bidderPrice);
+  // } else {
+
+  //   // Alert
+  //   alert("Sorry that bid is too low. Try again.");
+  // }
+});
 
             
                 
 
 //API Code
 
-$(document).ready(function() {
-
-  //toasts appear when maybe is clicked 
-M.toast({html: 'Added to Maybe List!'})
 
 
-//toasts appear when maybe not is clicked 
-M.toast({html: 'Added to Maybe Not List!'})
-
-//toasts appear when item is removed from maybe list
-M.toast({html: 'Removed from list and now available in the BROWSE page.'})
   //lookup
 // var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
 // console.log(queryURL);
@@ -230,7 +271,7 @@ var getRandomNameFacts = function() {
                   getRandomNameFacts();
                 }
 
-             
+    
                 //empties the div before adding more gifs
     
                 // console.log (results[0]);
@@ -248,5 +289,57 @@ var getRandomNameFacts = function() {
               }
 
               getRandomNameFacts();
+                //collect info into firebase if maybe not is clicked
+                //declare variables
+                var displayedName;
+                var nameDesc;
+                var nameDef;
+                var ismaybe ;
+
+                $(".maybe-button").on("click", function(event) {
+                  event.preventDefault();
+            
+                  displayedName = $(".name").text();
+                  nameDesc = $("#briefDesc").text();
+                  nameDef = $("#def1").text();
+                  ismaybe = true;
+  
+                  console.log(displayedName);
                 
-        });
+  
+                  database.ref().push({
+                    name: displayedName,
+                    nameDesc: nameDesc,
+                    nameDef: nameDef,
+                    ismaybe: ismaybe
+  
+                  });
+
+                });
+
+
+              $("#maybenot-button").on("click", function(event) {
+                event.preventDefault();
+          
+                displayedName = $(".name").text();
+                nameDesc = $("#briefDesc").text();
+                nameDef = $("#def1").text();
+                ismaybe = false;
+
+                console.log(displayedName);
+              
+
+                database.ref().push({
+                  name: displayedName,
+                  nameDesc: nameDesc,
+                  nameDef: nameDef,
+                  ismaybe: ismaybe
+
+                });
+
+              });
+          
+
+             
+          
+           
