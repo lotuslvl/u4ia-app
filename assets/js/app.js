@@ -114,13 +114,58 @@ $("#like-button").on("click", function likecounter() {
             });
           
                 });
+// Whenever a user clicks the click button
+$("#submit-info").on("click", function(event) {
+  event.preventDefault();
+
+  // Get the input values
+  var firstName = $("#first_name").val();
+  var userEmail = $("#email").val().trim();
+  var userPassword = $("#password").val().trim();
+
+  // Log the Bidder and Price (Even if not the highest)
+  console.log(firstName);
+  console.log(userEmail);
+  console.log(userPassword);
+
+  // if (bidderPrice > highPrice) {
+
+  //   // Alert
+  //   alert("You are now the highest bidder.");
+
+    // Save the new price in Firebase
+    database.ref().push({
+      firstName: first_name,
+      userEmail: email,
+      userPassword: password
+
+    });
+
+  //   // Log the new High Price
+  //   console.log("New High Price!");
+  //   console.log(bidderName);
+  //   console.log(bidderPrice);
+
+
+  //   // Store the new high price and bidder name as a local variable (could have also used the Firebase variable)
+  //   highBidder = bidderName;
+  //   highPrice = parseInt(bidderPrice);
+
+  //   // Change the HTML to reflect the new high price and bidder
+  //   $("#highest-bidder").text(bidderName);
+  //   $("#highest-price").text("$" + bidderPrice);
+  // } else {
+
+  //   // Alert
+  //   alert("Sorry that bid is too low. Try again.");
+  // }
+});
 
             
                 
 
 //API Code
 
-$(document).ready(function() {
 
 
   //lookup
@@ -213,4 +258,4 @@ var getRandomNameFacts = function() {
 
               getRandomNameFacts();
                 
-        });
+        
