@@ -146,6 +146,7 @@ $("#submit-info").on("click", function(event) {
   //   console.log(bidderName);
   //   console.log(bidderPrice);
 
+
   //   // Store the new high price and bidder name as a local variable (could have also used the Firebase variable)
   //   highBidder = bidderName;
   //   highPrice = parseInt(bidderPrice);
@@ -164,6 +165,7 @@ $("#submit-info").on("click", function(event) {
                 
 
 //API Code
+
 
 
   //lookup
