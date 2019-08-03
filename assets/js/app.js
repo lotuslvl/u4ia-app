@@ -258,19 +258,25 @@ var getRandomNameFacts = function() {
             $.ajax({url: queryURL2, 
             method: 'GET'})
             .done(function(response) {
+              console.log(response);
                 // grabs the data
                 var results = response.extract;
+          
+                
                 console.info("RESULT " + results);
                 console.info(results.length);
-                if (results.length >= 50){
+                if ( results.length >= 50 ) {
                    $(".name-definition").text(results);                  
                 }
-                else 
+                else if(!results)
                 {
                   console.info("Skipping name..");
                   getRandomNameFacts();
                 }
+                else {
+                  getRandomNameFacts();
 
+                }
     
                 //empties the div before adding more gifs
     
@@ -298,7 +304,7 @@ var getRandomNameFacts = function() {
 
                 $(".maybe-button").on("click", function(event) {
                   event.preventDefault();
-            
+                  
                   displayedName = $(".name").text();
                   nameDesc = $(".brief").text();
                   nameDef = $("#def1").text();
@@ -313,14 +319,16 @@ var getRandomNameFacts = function() {
                     nameDef: nameDef,
                     ismaybe: ismaybe
   
+                    
                   });
 
+                  getRandomNameFacts();
                 });
 
 
               $("#maybenot-button").on("click", function(event) {
                 event.preventDefault();
-          
+                
                 displayedName = $(".name").text();
                 nameDesc = $(".brief").text();
                 nameDef = $("#def1").text();
@@ -335,7 +343,10 @@ var getRandomNameFacts = function() {
                   nameDef: nameDef,
                   ismaybe: ismaybe
 
+                  
                 });
+
+                getRandomNameFacts();
 
               });
           
