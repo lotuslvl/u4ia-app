@@ -198,6 +198,13 @@ $("#submit-info").on("click", function (event) {
 
 
 var getRandomNameFacts = function () {
+
+  var newName = {
+    nameDesc: "",
+    name: "",
+    nameDef: "",
+  }
+
   var queryURL = "https://www.behindthename.com/api/random.json?usage=ita&gender=&number=6&key=jo289062920";
   console.log(queryURL);
   $.ajax({
@@ -210,6 +217,7 @@ var getRandomNameFacts = function () {
       // console.log(results);
       //empties the div before adding more gifs
 
+      newName.name=(results[0]);
       console.log(results[0]);
       $('#name-1').text(results[0]);
 
@@ -235,31 +243,36 @@ var getRandomNameFacts = function () {
         .done(function (response) {
           console.log(response);
 
-
+          
           if (response.probability > .8 && response.gender == "female") {
-
+            newName.nameDesc = "traditionally feminine";
+            
             $(".brief").text("traditionally feminine");
 
           }
 
           else if (response.probability < .8 && response.gender == "female") {
 
+            newName.nameDesc = "gender neutral";
             $(".brief").text("gender neutral");
 
           }
           else if (response.probability > .8 && response.gender == "male") {
 
+            newName.nameDesc = "traditionally masculine";
             $(".brief").text("traditionally masculine");
 
           }
 
           else if (response.probability < .8 && response.gender == "male") {
 
+            newName.nameDesc = "gender neutral";
             $(".brief").text("gender neutral");
 
           }
           else {
 
+            newName.nameDesc = "gender neutral";
             $(".brief").text("gender neutral");
 
           }
@@ -281,11 +294,14 @@ var getRandomNameFacts = function () {
           // grabs the data
           var results = response.extract;
 
+          newName.nameDef = results;
+          console.log(newName);
 
           console.info("RESULT " + results);
           console.info(results.length);
           if (results.length >= 50) {
             $(".name-definition").text(results);
+            // newCard(newName)
           }
           else if (!results) {
             console.info("Skipping name..");
@@ -368,7 +384,29 @@ $("#maybenot-button").on("click", function (event) {
 
 });
 
+function newCard (newName){
+  var html= `<div class="card white z-depth-3 hoverable">
+  <div class="card-content">
+    <p class="brief">${newName.nameDesc}</p>
+    <span class="name">${newName.name}</span>
+    <p class="name-definition">${newName.nameDef}</p>
+  </div>
+  <a target="_blank" href="https://en.wikipedia.org/wiki/${newName.name}">Learn More</a>
+  <div class="card-action">
+      <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> 0</a>
+      <a class="dislike-button" id="dislike-value" dislikes=0 href="#"> <i class="fas fa-thumbs-down" style="color:#3AB58B" ></i>  0 </a>  
+      <a class="trash-button" name="Alexander" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > <i class="fas fa-trash" style="color:rgb(98, 98, 98)" ></i> <p> Remove From List</p> </a>        
+      
+  
+  </div>
+</div>` 
+var element= $("<div>") // codument.createElement("div")
+element.html(html)
+$("#card-list").prepend(element)
+console.log(element);
 
+
+}
 
 
 
