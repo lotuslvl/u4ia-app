@@ -300,7 +300,7 @@ var getRandomNameFacts = function() {
                   event.preventDefault();
             
                   displayedName = $(".name").text();
-                  nameDesc = $("#briefDesc").text();
+                  nameDesc = $(".brief").text();
                   nameDef = $("#def1").text();
                   ismaybe = true;
   
@@ -322,7 +322,7 @@ var getRandomNameFacts = function() {
                 event.preventDefault();
           
                 displayedName = $(".name").text();
-                nameDesc = $("#briefDesc").text();
+                nameDesc = $(".brief").text();
                 nameDef = $("#def1").text();
                 ismaybe = false;
 
