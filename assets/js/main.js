@@ -40,6 +40,10 @@ function myFunction() {
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, options);
+
+      //lookfor an instance of selecting
+    var elems = document.querySelectorAll('select');
+    var instance = M.FormSelect.init(elems, options);
   });
 
   // Or with jQuery
@@ -51,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
  $(".trash-button").click(function(){
         alert("clicked!");
         var name= $(this).attr("name");
-        $("#"+ name).hide();
+        $("#"+ name).hide();})
 
 
         //toasts appear when maybe is clicked 
@@ -64,25 +68,7 @@ M.toast({html: 'Added to Maybe Not List!'})
 //toasts appear when item is removed from maybe list
 M.toast({html: 'Removed from list and now available in the BROWSE page.'})
 
-$('.modal').modal();
 
+ 
 
-      });
-
-
-
-
-
-
-
-
-
-
-
-
-
-  });
-
-
-  
-        
+});
