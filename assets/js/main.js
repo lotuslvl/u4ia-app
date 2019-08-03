@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Or with jQuery
 
   $(document).ready(function(){
-    $('.sidenav').sidenav();
+
 
    
  $(".trash-button").click(function(){
