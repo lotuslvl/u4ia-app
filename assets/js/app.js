@@ -151,8 +151,11 @@ M.toast({html: 'Removed from list and now available in the BROWSE page.'})
 //   console.log(queryURL);
 
 //   var queryURL = "https://www.behindthename.com/api/lookup.json?name=joe&key=jo289062920";
-//   console.log(queryURL);
+//   console.log(queryURL)
 
+
+
+var getRandomNameFacts = function() {
   var queryURL = "https://www.behindthename.com/api/random.json?usage=ita&gender=f&number=6&key=jo289062920";
         console.log(queryURL);
         $.ajax({url: queryURL, 
@@ -174,8 +177,16 @@ M.toast({html: 'Removed from list and now available in the BROWSE page.'})
             .done(function(response) {
                 // grabs the data
                 var results = response.extract;
-                console.log(results);
-                $(".name-definition").text(results); 
+                console.info(results);
+                console.info(results.length);
+                if (results.length >= 50){
+                   $(".name-definition").text(results);                  
+                }
+                else 
+                {
+                  console.info("Skipping name..");
+                  getRandomNameFacts();
+                }
 
              
                 //empties the div before adding more gifs
@@ -202,9 +213,12 @@ M.toast({html: 'Removed from list and now available in the BROWSE page.'})
                 }).catch(function(error){
 
                   console.log(error);
+                  getRandomNameFacts();
                 })
 
                 // setTimeout(function(){ console.log($('.name').val()); }, 3000);
+              }
 
+              getRandomNameFacts();
                 
         });
