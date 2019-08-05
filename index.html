@@ -55,8 +55,8 @@
             <a href="#!" class="brand-logo"><img class="logo-lotus" src="assets\img\logo.png" alt="logo" style="width:100px;height:100px;"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="index.html">Browse</a></li>
-              <li><a href="maybe.html">Maybes</a></li>
+              <li><a href="index.html">Names</a></li>
+              <li><a href="maybe.html">My Maybes</a></li>
               <li><a href="maybe-not.html">Maybe Nots</a></li>
               <li><a href="to-do.html">To-Dos</a></li>
               <li><a href="about.html">About u4ia</a></li>
@@ -68,8 +68,8 @@
 
      <!--Mobile navigation-->  
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="index.html">Browse</a></li>
-            <li><a href="maybe.html">Maybes</a></li>
+            <li><a href="index.html">Names</a></li>
+            <li><a href="maybe.html">My Maybes</a></li>
             <li><a href="maybe-not.html">Maybe Nots</a></li>
             <li><a href="to-do.html">To-Dos</a></li>
             <li><a href="about.html">About u4ia</a></li>
@@ -84,7 +84,203 @@
   </div>
 
 
+  <div class="row">
+    <div id="filters" class="col s6 offset-s3">
+<!--select a country-->
+  <label>Origin</label>
+  <select class="browser-default" id="country">
+    <option value="" code="eng" disabled selected> English </option>
+    
+    <optgroup label="A">
+    <option value="1" code="afk">Afrikaans</option>
+    <option value="2" code="afr">Africa</option>
+    <option value="3"code="alb">Albanian</option>
+    <option value="4"code="astr">Other Wordly</option>
+    <option value="5"code="ame">America- First Nations</option>  
+    <option value="5"code="usa">American</option>  
+    <option value="6"code="apa">Apache</option>  
+    <option value="7"code="ara">Arabic</option>  
+    <option value="8"code="aus">Australian- First Nations</option>
+  </optgroup>
 
+  <optgroup label="B">
+    <option value="9" code="bal">Balinese</option>
+    <option value="10" code="bas">Basque</option>
+    <option value="11"code="ber">Berber</option>
+    <option value="12"code="bibl">Biblical</option>
+    <option value="13"code="bul">Bulgarian</option>  
+    <option value="14"code="bur">Burmese</option>  
+
+  </optgroup>
+
+  <optgroup label="C">
+    <option value="15" code="cew">Chewa</option>
+    <option value="16" code="chi">Chinese</option>
+    <option value="17"code="ber">Cherokee</option>
+    <option value="18"code="cht">Choctaw</option>
+    <option value="19"code="cro">Croatian</option>  
+    <option value="20"code="cze">Czech</option>  
+
+  </optgroup>
+  <optgroup label="D">
+    <option value="21" code="dab">Danish</option>
+    <option value="22" code="dut">Dutch</option>
+
+  </optgroup>
+
+
+  <optgroup label="E">
+    <option value="23" code="esp">Esperanto</option>
+    <option value="24" code="est">Estonian</option>
+    <option value="25" code="eth">Ethiopian</option>
+    <option value="26" code="ewe">Ewe</option>
+  </optgroup>
+
+  <optgroup label="F">
+    <option value="23" code="fairy">Fairy</option>
+    <option value="24" code="fil">Filipino</option>
+    <option value="25" code="fin">Finnish</option>
+    <option value="26" code="fle">Flemish</option>
+  </optgroup>
+
+
+  <optgroup label="G">
+    <option value="23" code="gan">Ganda</option>
+    <option value="24" code="geo">Georgian</option>
+    <option value="25" code="ger">German</option>
+    <option value="26" code="goth">Goth</option>
+    <option value="26" code="gre">Greek</option>
+  </optgroup>
+
+  <optgroup label="H">
+    <option value="23" code="haw">Hawaiian</option>
+    <option value="24" code="hb">Hillbilly</option>
+    <option value="25" code="heb">Hebrew</option>
+    <option value="26" code="hin">Hindi</option>
+    <option value="26" code="hippy">Hippy</option>
+    <option value="26" code="hist">History</option>
+    <option value="26" code="hun">Hungarian</option>
+  </optgroup>
+
+  <optgroup label="I">
+    <option value="23" code="ice">Icelandic</option>
+    <option value="24" code="ind">Indian</option>
+    <option value="25" code="ins">Indonesian</option>
+    <option value="26" code="inu">Inhuit</option>
+    <option value="26" code="ira">Iranian</option>
+    <option value="26" code="iri">Irish</option>
+    <option value="26" code="iro">Iroquois</option>
+    <option value="26" code="ita">Italian</option>
+  </optgroup>
+
+  <optgroup label="J">
+    <option value="23" code="jap">Japanese</option>
+    <option value="24" code="jav">Javanese</option>
+    <option value="25" code="jew">Jewish</option>
+  
+  </optgroup>
+
+  <optgroup label="K">
+    <option value="23" code="kor">Korean</option>
+    <option value="24" code="kur">Kurdish</option>
+    
+  </optgroup>
+
+
+  <optgroup label="L">
+    <option value="23" code="lite">Literature</option>
+    <option value="24" code="lth">Lithuanian</option>
+    
+  </optgroup>
+
+  <optgroup label="M">
+    <option value="23" code="mao">Maori</option>
+    <option value="24" code="may">Mayan</option>
+    <option value="24" code="medi">Medieval</option>
+    <option value="24" code="mon">Mongolian</option>
+    <option value="24" code="myth">Mythology</option>
+  </optgroup>
+
+  <optgroup label="N">
+    <option value="23" code="nav">Navajo</option>
+    <option value="24" code="nep">Nepali</option>
+    <option value="24" code="nor">Norwegian</option>
+  </optgroup>
+
+  <optgroup label="O">
+    <option value="23" code="odi">Odia</option>
+    <option value="24" code="oro">Oromo</option>
+  </optgroup>
+
+  <optgroup label="P">
+    <option value="23" code="per">Persian</option>
+    <option value="24" code="pol">Polish</option>
+    <option value="24" code="popu">Popular Culture</option>
+  </optgroup>
+
+  <optgroup label="R">
+    <option value="23" code="rus">Russian</option>
+    
+  </optgroup>
+
+  <optgroup label="S">
+    <option value="23" code="sco">Scottish</option>
+    <option value="23" code="ser">Serbian</option>
+    <option value="23" code="sio">Sioux</option>
+    <option value="23" code="spa">Spanish</option>
+    <option value="23" code="swe">Swedish</option>
+  </optgroup>
+
+
+  <optgroup label="T">
+    <option value="23" code="tag">Tagalog</option>
+    <option value="23" code="ser">Thai</option>
+    <option value="23" code="theo">Theology</option>
+    <option value="23" code="tib">Tibetan</option>
+    <option value="23" code="trans">Transformer</option>
+    <option value="23" code="tur">Turkish</option>
+  </optgroup>
+
+  <optgroup label="V">
+    <option value="23" code="vie">Vietnamese</option>
+  </optgroup>
+
+  <optgroup label="W">
+    <option value="23" code="wel">Welsh</option>
+    <option value="23" code="witch">Witch</option>
+    <option value="23" code="wrest">Wrestler</option>
+  </optgroup>
+
+  <optgroup label="Y">
+    <option value="23" code="yor">Yoruba</option>
+
+  </optgroup>
+
+  <optgroup label="Z">
+    <option value="23" code="zulu">Zulu</option>
+
+  </optgroup>
+  </select>
+
+  <label>Gender Expression</label>
+  <select class="browser-default" id="genderexpression">
+    <option value="" selected code="f!@# gender" shortcode="">f!@# gender</option>
+    <option value="1" code="traditionally feminine" shortcode="f" >traditionally feminine</option>
+    <option value="2" code="gender neutral"shortcode="f+m" >gender neutral</option>
+    <option value="3" code="traditionally masculine" shortcode="m">traditionally masculine</option>
+    
+  </select>
+
+  <label>Length</label>
+  <select class="browser-default">
+    <option value="" disabled selected>How long should it be? </option>
+    <option value="1">Short and Sweet</option>
+    <option value="2">The Middle Way</option>
+    <option value="3">Long and Majestic</option>
+  </select>     
+      </div>
+  </div>
+  
   <section class="all-names">
 
 
@@ -94,23 +290,26 @@
         <a class="search-tag" href="#">Alexander</a>
         <div class="row">
           <div id="card-list" class="col s6 offset-s3">
+              <div class="card-action">
+
+                  <a class=" maybe-not-button waves-effect waves-light btn-small" id="maybenot-button"  onclick="M.toast({html: 'Added to Maybe Not List!'})"><i class="material-icons left fas fa-times" style="color:white;"></i>Maybe Not</a>
+                  <a class="maybe-button waves-effect waves-light btn-small"id="maybe-button1"  onclick="M.toast({html: 'Added to Maybe List!'})"><i class="material-icons right fas fa-check" style="color:white;"></i>Maybe</a>
+
+
+  
+                </div>
             <div class="card white z-depth-3 hoverable">
               <div class="card-content">
 
                 <p class="brief"></p>
                 <span class="name" id="name-1"></span>
 
-                <p class="name-definition" id="def1"> </p>
-              </div>
-              <a target="_blank" href="https://en.wikipedia.org/wiki/Alexander">Learn More</a>
-              <div class="card-action">
-                <a class="maybe-not-button" id="maybenot-button" data="name" href="#"
-                  onclick="M.toast({html: 'Added to Maybe Not List!'})"><i class="fas fa-times"
-                    style="color:#3AB58B"></i> Maybe Not</a>
+                <p class="name-definition" id="def1">_</p>
 
-                <a class="maybe-button" id-="maybe-button1" data="name" href="#" onclick="M.toast({html: 'Added to Maybe List!'})"> <i
-                    class="fas fa-check" style="color:#3AB58B"></i> Maybe</a>
+                <a class="learnmore" target="_blank" href="https://en.wikipedia.org/wiki/">Learn More</a>
               </div>
+              
+
 
             </div>
           </div>

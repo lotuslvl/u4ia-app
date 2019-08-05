@@ -20,6 +20,15 @@ var nameDislike = 0;
 var likeCounter = nameLike;
 var dislikeCounter = 0;
 
+
+// Global name variable
+
+var trueName;
+var selectedGender;
+
+
+
+
 // var clickCounter = initialValue;
 // --------------------------------------------------------------
 //SHOWS THE # OF LIKES
@@ -204,9 +213,33 @@ var getRandomNameFacts = function () {
     name: "",
     nameDef: "",
   }
+ 
 
-  var queryURL = "https://www.behindthename.com/api/random.json?usage=ita&gender=&number=6&key=jo289062920";
-  console.log(queryURL);
+  var queryURL;
+  var selectedCountry = $("#country :selected").attr("code");
+
+
+  selectedGender = $("#genderexpression :selected").attr("code");
+  var selectedGenderShort = $("#genderexpression :selected").attr("shortcode");
+
+ if (selectedCountry===undefined) {
+
+  queryURL = "https://www.behindthename.com/api/random.json?&gender=&number=6&key=jo289062920";
+
+
+}
+
+else {
+
+  queryURL = "https://www.behindthename.com/api/random.json?usage="+ selectedCountry+"&gender="+ selectedGenderShort+ "&number=1&key=jo289062920";
+
+}
+
+
+
+
+
+
   $.ajax({
     url: queryURL,
     method: 'GET'
@@ -218,8 +251,9 @@ var getRandomNameFacts = function () {
       //empties the div before adding more gifs
 
       newName.name=(results[0]);
+      trueName= results[0];
       console.log(results[0]);
-      $('#name-1').text(results[0]);
+     
 
       // var queryURL3 = "https://en.wikipedia.org/wiki/" + results[0];
       // console.log(queryURL3);
@@ -244,39 +278,10 @@ var getRandomNameFacts = function () {
           console.log(response);
 
           
-          if (response.probability > .8 && response.gender == "female") {
-            newName.nameDesc = "traditionally feminine";
+        
+            newName.nameDesc = selectedGender;
             
-            $(".brief").text("traditionally feminine");
-
-          }
-
-          else if (response.probability < .8 && response.gender == "female") {
-
-            newName.nameDesc = "gender neutral";
-            $(".brief").text("gender neutral");
-
-          }
-          else if (response.probability > .8 && response.gender == "male") {
-
-            newName.nameDesc = "traditionally masculine";
-            $(".brief").text("traditionally masculine");
-
-          }
-
-          else if (response.probability < .8 && response.gender == "male") {
-
-            newName.nameDesc = "gender neutral";
-            $(".brief").text("gender neutral");
-
-          }
-          else {
-
-            newName.nameDesc = "gender neutral";
-            $(".brief").text("gender neutral");
-
-          }
-
+   
 
 
 
@@ -290,32 +295,34 @@ var getRandomNameFacts = function () {
         method: 'GET'
       })
         .done(function (response) {
-          console.log(response);
+         
           // grabs the data
-          var results = response.extract;
+          var results = "noresults"
+          
+          results= response.extract;
+          
 
           newName.nameDef = results;
-          console.log(newName);
 
-          console.info("RESULT " + results);
-          console.info(results.length);
-          if (results.length >= 50) {
+       
+          
+          if (results && results.length >= 50) {
+
+
             $(".name-definition").text(results);
+            
+            $(".learnmore").attr("href", "https://en.wikipedia.org/wiki/"+ newName.name);
             // newCard(newName)
+            $(".brief").text(selectedGender);
+            $('#name-1').text(trueName);
+                     
           }
-          else if (!results) {
-            console.info("Skipping name..");
-            getRandomNameFacts();
-          }
+          
           else {
             getRandomNameFacts();
 
           }
 
-          //empties the div before adding more gifs
-
-          // console.log (results[0]);
-          // $('.name').text(results[0]);
         })
 
 
@@ -325,7 +332,6 @@ var getRandomNameFacts = function () {
       getRandomNameFacts();
     })
 
-  // setTimeout(function(){ console.log($('.name').val()); }, 3000);
 }
 
 getRandomNameFacts();
@@ -342,6 +348,7 @@ $(".maybe-button").on("click", function (event) {
   displayedName = $(".name").text();
   nameDesc = $(".brief").text();
   nameDef = $("#def1").text();
+
   ismaybe = true;
 
   console.log(displayedName);
@@ -384,29 +391,7 @@ $("#maybenot-button").on("click", function (event) {
 
 });
 
-function newCard (newName){
-  var html= `<div class="card white z-depth-3 hoverable">
-  <div class="card-content">
-    <p class="brief">${newName.nameDesc}</p>
-    <span class="name">${newName.name}</span>
-    <p class="name-definition">${newName.nameDef}</p>
-  </div>
-  <a target="_blank" href="https://en.wikipedia.org/wiki/${newName.name}">Learn More</a>
-  <div class="card-action">
-      <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> 0</a>
-      <a class="dislike-button" id="dislike-value" dislikes=0 href="#"> <i class="fas fa-thumbs-down" style="color:#3AB58B" ></i>  0 </a>  
-      <a class="trash-button" name="Alexander" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > <i class="fas fa-trash" style="color:rgb(98, 98, 98)" ></i> <p> Remove From List</p> </a>        
-      
-  
-  </div>
-</div>` 
-var element= $("<div>") // codument.createElement("div")
-element.html(html)
-$("#card-list").prepend(element)
-console.log(element);
 
-
-}
 
 
 
