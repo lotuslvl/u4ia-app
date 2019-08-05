@@ -244,49 +244,15 @@ else {
     url: queryURL,
     method: 'GET'
   })
-    .done(function (response) {
+  .done(function (response) {
       // grabs the data
       var results = response.names;
-      // console.log(results);
-      //empties the div before adding more gifs
 
       newName.name=(results[0]);
       trueName= results[0];
       console.log(results[0]);
-     
+    
 
-      // var queryURL3 = "https://en.wikipedia.org/wiki/" + results[0];
-      // console.log(queryURL3);
-      // $.ajax({url: queryURL3, 
-      // method: 'GET'})
-      // .done(function(response) {
-      //       // grabs the data
-      //     // var results = response.names;
-      //     // console.log(results);
-      //     //empties the div before adding more gifs
-
-      //     console.log (results[0]);
-      //     // $('#name-1').text(results[0]);
-
-      var queryURL5 = "https://api.genderize.io?name=" + results[0] + "&apikey=d29a290e5cddfa95a00b07b0457d64f6";
-      // console.log(queryURL);
-      $.ajax({
-        url: queryURL5,
-        method: 'GET'
-      })
-        .done(function (response) {
-          console.log(response);
-
-          
-        
-            newName.nameDesc = selectedGender;
-            
-   
-
-
-
-
-        })
 
       var queryURL2 = "https://en.wikipedia.org/api/rest_v1/page/summary/" + results[0] + "?redirect=true";
       // console.log(queryURL);
@@ -303,7 +269,7 @@ else {
           
 
           newName.nameDef = results;
-
+          newName.nameDesc = selectedGender;
        
           
           if (results && results.length >= 50) {
@@ -332,7 +298,14 @@ else {
       getRandomNameFacts();
     })
 
-}
+
+} 
+
+
+
+
+
+
 
 getRandomNameFacts();
 //collect info into firebase if maybe not is clicked
@@ -366,6 +339,22 @@ $(".maybe-button").on("click", function (event) {
   getRandomNameFacts();
 });
 
+
+$('#country').change(function(){
+  getRandomNameFacts();
+})
+
+
+$('#genderexpression').change(function(){
+  getRandomNameFacts();
+})
+
+
+$(".skip-button").on("click", function (event) {
+  event.preventDefault();
+
+  getRandomNameFacts();
+});
 
 $("#maybenot-button").on("click", function (event) {
   event.preventDefault();
