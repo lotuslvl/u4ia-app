@@ -90,13 +90,14 @@ color:#3AB58B !important;
 /* maybe and maybe not buttons */
 
 .maybe-button {
-    color:#3AB58B;
+    color:rgb(255, 255, 255) !important;
+    float:right;
 
 }
 
 .maybe-not-button {
 
-    color:#3AB58B;
+    color:rgb(255, 255, 255) !important;
 }
 
 
@@ -242,4 +243,9 @@ body, html {
     border-width: medium;
     border-color: grey;
     padding: 20px;
+}
+
+.trash-button-not{
+
+    float:right;
 }

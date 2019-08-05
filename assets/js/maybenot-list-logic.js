@@ -17,8 +17,8 @@ var database = firebase.database();
 database.ref().on("child_added", function (snapshot) {
     var newName = snapshot.val();
     // console.log(newName.ismaybe);
-    if (!newName.ismaybe){
-        
+    if (newName.ismaybe){
+        return
     }
    
 
@@ -35,15 +35,9 @@ function newCard (newName){
     <div class="card-content">
       <p class="brief">${newName.nameDesc}</p>
       <span class="name">${newName.name}</span>
-      <p class="name-definition">${newName.nameDef}</p>
+      <a class="trash-button-not" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > </i> <p> Remove From List</p> </a>
     </div>
-    <div class="card-action">
-        <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> 0</a>
-        <a class="dislike-button" id="dislike-value" dislikes=0 href="#"> <i class="fas fa-thumbs-down" style="color:#3AB58B" ></i>  0 </a>  
-        <a class="trash-button" name="Alexander" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > <i class="fas fa-trash" style="color:rgb(98, 98, 98)" ></i> <p> Remove From List</p> </a>        
-        
-    
-    </div>
+
   </div>` 
   var element= $("<div>") // codument.createElement("div")
   element.html(html)
