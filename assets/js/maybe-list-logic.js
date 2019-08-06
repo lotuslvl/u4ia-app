@@ -43,7 +43,7 @@ function newCard (newName){
     </div>
     
     <div class="card-action">
-        <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> ${newName.nameLike}</a>
+        <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> 0 </a>
         <a class="dislike-button" id="dislike-value" dislikes=0 href="#"> <i class="fas fa-thumbs-down" style="color:#3AB58B" ></i>  ${newName.nameDislike} </a>  
         <a class="trash-button" name="${newName.name}" href="#" " > <i class="fas fa-trash" style="color:rgb(98, 98, 98)" ></i> <p> Remove From List</p> </a>        
         
@@ -65,7 +65,75 @@ $("#"+ id+ "").hide();
 
 });
 
+//Like & Dislike button function
+var nameLike = 0;
 
+
+$("#like-value").on("click", function likecounter() {
+  event.preventDefault();
+
+  nameLike++;
+
+  console.log(nameLike);
+
+  database.ref().update({
+nameLike: nameLike,
+
+
+  })
+
+  database.ref().on("value", function likecount(snapshot) {
+    // We are now inside our .on function...
+
+    // Console.log the "snapshot" value (a point-in-time representation of the database)
+    console.log(snapshot.val());
+    // This "snapshot" allows the page to get the most current values in firebase.
+
+    // Change the value of our likeCounter to match the value in the database
+    likeCounter = snapshot.val().nameLike;
+
+    // Console Log the value of the clickCounter
+    console.log(likeCounter);
+
+    // Change the HTML using jQuery to reflect the updated clickCounter value
+    $("#like-value").text(likeCounter);
+
+  });
+
+  var nameDislike = 0;
+
+$("#dislike-value").on("click", function dislikecounter() {
+  event.preventDefault();
+
+  nameDislike++;
+
+  console.log(nameDislike);
+
+  database.ref().update({
+nameDislike: nameDislike,
+
+
+  })
+
+  database.ref().on("value", function likecount(snapshot) {
+    // We are now inside our .on function...
+
+    // Console.log the "snapshot" value (a point-in-time representation of the database)
+    console.log(snapshot.val());
+    // This "snapshot" allows the page to get the most current values in firebase.
+
+    // Change the value of our likeCounter to match the value in the database
+    dislikeCounter = snapshot.val().nameDislike;
+
+    // Console Log the value of the clickCounter
+    console.log(dislikeCounter);
+
+    // Change the HTML using jQuery to reflect the updated clickCounter value
+    $("#dislike-value").text(dislikeCounter);
+
+  });
+})
+})
 
 
 }
