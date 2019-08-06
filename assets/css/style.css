@@ -248,6 +248,17 @@ body, html {
     color:black !important;
 }
 
+.information {
+    display:block;
+    margin-left: 35px;
+}
+
+#informationheader {
+    margin-top:20px;
+    font-size: 40px;
+}
+
+
 .whitebackground {
     background-color: white !important;
     border-radius:10px;
