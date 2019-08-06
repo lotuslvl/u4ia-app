@@ -80,6 +80,7 @@
     <div class="col s6 offset-s3">
       <img class="page-title" id="browse-title" src="assets\img\browse.PNG" alt="logo" style="width:100%">
       <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search names.."> -->
+      <p id= "u4iatext"><strong> Does it speak to you? Is it the one? </strong> Browse names and decide whether it may be u4ia or...well...maybe not. </p>
     </div>
   </div>
 
@@ -271,12 +272,11 @@
     
   </select>
 
-  <label>Length</label>
-  <select class="browser-default">
-    <option value="" disabled selected>How long should it be? </option>
-    <option value="1">Short and Sweet</option>
-    <option value="2">The Middle Way</option>
-    <option value="3">Long and Majestic</option>
+  <label>Name Length</label>
+  <select class="browser-default" id="namelength">
+    <option value="" selected code="any"> All shapes and sizes </option>
+    <option value="1" code="short">Short and Sweet</option>
+      <option value="3" code="long">Long and Majestic</option>
   </select>     
       </div>
   </div>
@@ -292,7 +292,9 @@
           <div id="card-list" class="col s6 offset-s3">
               <div class="card-action">
 
-                  <a class=" maybe-not-button waves-effect waves-light btn-small" id="maybenot-button"  onclick="M.toast({html: 'Added to Maybe Not List!'})"><i class="material-icons left fas fa-times" style="color:white;"></i>Maybe Not</a>
+                  <a class="maybe-not-button waves-effect waves-light btn-small" id="maybenot-button"  onclick="M.toast({html: 'Added to Maybe Not List!'})"><i class="material-icons left fas fa-times" style="color:white;"></i>Maybe Not</a>
+                  <a class="skip-button waves-effect waves-light btn-small" id="skip-button"  onclick="M.toast({html: 'Skipped!'})">Skip</a>
+                 
                   <a class="maybe-button waves-effect waves-light btn-small"id="maybe-button1"  onclick="M.toast({html: 'Added to Maybe List!'})"><i class="material-icons right fas fa-check" style="color:white;"></i>Maybe</a>
 
 
@@ -304,7 +306,7 @@
                 <p class="brief"></p>
                 <span class="name" id="name-1"></span>
 
-                <p class="name-definition" id="def1">_</p>
+                <p class="name-definition" id="def1">loading</p>
 
                 <a class="learnmore" target="_blank" href="https://en.wikipedia.org/wiki/">Learn More</a>
               </div>

@@ -92,12 +92,23 @@ color:#3AB58B !important;
 .maybe-button {
     color:rgb(255, 255, 255) !important;
     float:right;
+    width: 40%; 
+
+}
+.skip-button {
+    background-color:rgb(144, 144, 144) !important;
+    color: rgb(255, 255, 255) !important;
+    position: relative;
+    width: 18%; /* the left edge of the button is now in the center of the parent element. Now we need to nudge the button back to the left by 50% of the button width to make it center aligned. */
+   
+    
 
 }
 
 .maybe-not-button {
 
     color:rgb(255, 255, 255) !important;
+    width: 40%; 
 }
 
 
@@ -248,4 +259,11 @@ body, html {
 .trash-button-not{
 
     float:right;
+}
+
+#u4iatext {
+
+    margin-bottom:-20px !important;
+    text-align: center;
+    font-size: 18px;
 }
