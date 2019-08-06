@@ -17,7 +17,7 @@ var database = firebase.database();
 database.ref().on("child_added", function (snapshot) {
     var newName = snapshot.val();
     // console.log(newName.ismaybe);
-    if (newName.ismaybe){
+    if (newName.ismaybe ||!newName.name){
         return
     }
    
@@ -31,11 +31,11 @@ database.ref().on("child_added", function (snapshot) {
 });
 
 function newCard (newName){
-    var html= `<div class="card white z-depth-3 hoverable">
+    var html= `<div class="card white z-depth-3 hoverable" id="${newName.name}">
     <div class="card-content">
       <p class="brief">${newName.nameDesc}</p>
       <span class="name">${newName.name}</span>
-      <a class="trash-button-not" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > </i> <p> Remove From List</p> </a>
+      <a class="trash-button-not" name="${newName.name}" href="#" " > </i> <p> Remove From List</p> </a>
     </div>
 
   </div>` 
@@ -44,5 +44,12 @@ function newCard (newName){
   $("#card-list").prepend(element)
   console.log(element);
 
+
+  $(".trash-button-not").on("click", function (event) {
+
+    id = $(this).attr("name");
+    $("#"+ id+ "").hide();
+    
+    });
 
 }

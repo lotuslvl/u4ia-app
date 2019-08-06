@@ -17,7 +17,7 @@ var database = firebase.database();
 database.ref().on("child_added", function (snapshot) {
     var newName = snapshot.val();
     // console.log(newName.ismaybe);
-    if (!newName.ismaybe){
+    if (!newName.ismaybe ||!newName.name ){
         return
     }
     // console.log(newName.name);
@@ -34,7 +34,7 @@ database.ref().on("child_added", function (snapshot) {
 });
 
 function newCard (newName){
-    var html= `<div class="card white z-depth-3 hoverable">
+    var html= `<div class="card white z-depth-3 hoverable" id="${newName.name}">
     <div class="card-content">
       <p class="brief">${newName.nameDesc}</p>
       <span class="name">${newName.name}</span>
@@ -43,9 +43,9 @@ function newCard (newName){
     </div>
     
     <div class="card-action">
-        <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> 0</a>
-        <a class="dislike-button" id="dislike-value" dislikes=0 href="#"> <i class="fas fa-thumbs-down" style="color:#3AB58B" ></i>  0 </a>  
-        <a class="trash-button" name="Alexander" href="#" onclick="M.toast({html: 'Removed from list and now available in the BROWSE page.'})" > <i class="fas fa-trash" style="color:rgb(98, 98, 98)" ></i> <p> Remove From List</p> </a>        
+        <a class="like-button" id="like-value" likes=0 href="#"><i class="fas fa-thumbs-up" style="color:#3AB58B" ></i> ${newName.nameLike}</a>
+        <a class="dislike-button" id="dislike-value" dislikes=0 href="#"> <i class="fas fa-thumbs-down" style="color:#3AB58B" ></i>  ${newName.nameDislike} </a>  
+        <a class="trash-button" name="${newName.name}" href="#" " > <i class="fas fa-trash" style="color:rgb(98, 98, 98)" ></i> <p> Remove From List</p> </a>        
         
     
     </div>
@@ -56,4 +56,19 @@ function newCard (newName){
   console.log(element);
 
 
+  var id;
+
+$(".trash-button").on("click", function (event) {
+
+id = $(this).attr("name");
+$("#"+ id+ "").hide();
+
+});
+
+
+
+
 }
+
+
+
