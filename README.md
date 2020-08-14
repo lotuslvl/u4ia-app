@@ -1,7 +1,7 @@
 # project-1
 Bootcamp project #1
 
- https://eladio-montenegro.github.io/project-1/
+https://lotuslvl.github.io/u4ia-app/index.html
 
 TITLE
 
